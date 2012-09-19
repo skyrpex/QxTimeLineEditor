@@ -1,5 +1,5 @@
-#ifndef TIMELINEEDITOR_H
-#define TIMELINEEDITOR_H
+#ifndef QXTIMELINEEDITOR_H
+#define QXTIMELINEEDITOR_H
 
 #include <qxtimelineeditor_global.h>
 #include <QGraphicsView>
@@ -39,4 +39,4 @@ private:
   uint m_startFrame;
 };
 
-#endif // TIMELINEEDITOR_H
+#endif // QXTIMELINEEDITOR_H
