@@ -67,10 +67,12 @@ int QxTimeLineEditor::maximumFrameCount() const
 
 QSize QxTimeLineEditor::sizeHint() const
 {
-  if(scene())
-    return scene()->sceneRect().size().toSize();
+  QSize extra(1, 0);
 
-  return sceneRect().size().toSize();
+  if(scene())
+    return scene()->sceneRect().size().toSize()+extra;
+
+  return sceneRect().size().toSize()+extra;
 }
 
 int QxTimeLineEditor::frameAt(const QPoint &pos) const
