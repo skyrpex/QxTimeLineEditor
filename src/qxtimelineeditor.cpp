@@ -26,6 +26,9 @@ QxTimeLineEditor::QxTimeLineEditor(QWidget *parent) :
 
   setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
   setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+  // Remove the border
+  setStyleSheet( "QGraphicsView { border-style: none; }" );
 }
 
 void QxTimeLineEditor::setKeyFrames(const QList<int> &keyFrames)
