@@ -99,7 +99,7 @@ void QxTimeLineEditor::contextMenuEvent(QContextMenuEvent *event)
 
   //
   int frame = frameAt(event->pos());
-  KeyFrameItem *item = m_keyFrames.value(frame, NULL);
+  QGraphicsItem *item = m_keyFrames.value(frame, NULL);
   addAction->setVisible(!item);
   removeAction->setVisible(item && frame > 0);
 
