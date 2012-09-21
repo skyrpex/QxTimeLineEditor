@@ -141,7 +141,8 @@ void QxTimeLineEditor::mouseReleaseEvent(QMouseEvent *event)
 
     // Move/replace the keyframes
     int destFrame = frameAt(event->pos());
-    if(replaceKeyFrame(m_startFrame, destFrame))
+    if(m_startFrame != destFrame
+       && replaceKeyFrame(m_startFrame, destFrame))
       replaceItem(m_startFrame, destFrame);
   }
 }
