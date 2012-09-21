@@ -80,9 +80,8 @@ QSize QxTimeLineEditor::sizeHint() const
 
 int QxTimeLineEditor::frameAt(const QPoint &pos) const
 {
-  qreal x = mapToScene(pos).toPoint().x();
-  x = qMin(sceneRect().right()-s_frameSize.width(), qMax(sceneRect().left(), x));
-  return static_cast<int>(x)/s_frameSize.width();
+  int frame = mapToScene(pos).toPoint().x()/s_frameSize.width();
+  return qBound(0, frame, maximumFrameCount());
 }
 
 void QxTimeLineEditor::drawBackground(QPainter *painter, const QRectF &rect)
@@ -141,7 +140,7 @@ void QxTimeLineEditor::mouseReleaseEvent(QMouseEvent *event)
 
     // Move/replace the keyframes
     int destFrame = frameAt(event->pos());
-    if(m_startFrame != destFrame
+    if(m_startFrame != (uint)destFrame
        && replaceKeyFrame(m_startFrame, destFrame))
       replaceItem(m_startFrame, destFrame);
   }
