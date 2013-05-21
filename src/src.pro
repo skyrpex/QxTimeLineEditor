@@ -1,4 +1,4 @@
-﻿QT = core gui
+QT = core gui
 TARGET = QxTimeLineEditor
 TEMPLATE = lib
 DESTDIR = $$PWD/../bin
